@@ -26,7 +26,7 @@ extern "C" void app_main(void)
     //}
 
     ESP_LOGI(TAG, "Setting up WolfClient...");
-    status = setupWolfClient(SENSOR_AIR);
+    status = setupWolfClient(SENSOR_ATMOSPHERE);
     if (status != ESP_OK) {
         ESP_LOGE(TAG, "Failed to initialize WolfClient: %s", esp_err_to_name(status));
         return;
