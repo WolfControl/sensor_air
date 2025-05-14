@@ -6,17 +6,27 @@
 #include "provisioning.h"
 #include "sensor_manager.hpp"
 #include "sensor_interface.hpp"
+#include "bme280_adapter.hpp"
+#include "bme280_i2c.hpp"
 
-// ---------- sensor.h ---------- //
+// ---------- sensor manager / interface ---------- //
 
 // Sensor manager
 extern SensorManager sensorManager;
+
+// BME280 object
+extern BME280 *bme280;
+
+// BME280Adapter object
+extern BME280Adapter* bme280Adapter;
 
 
 // ---------- provisioning.h ---------- //
 
 char *nodes[] = {
-    "Temp",
+    "TMP",
+    "PRS",
+    "HUM",
 };
 
 const int numNodes = sizeof(nodes) / sizeof(nodes[0]);
